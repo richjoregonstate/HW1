@@ -68,8 +68,8 @@ void sort(struct student* students, int n){
 }
 
 int main(){
-    time_t t;
-    srand((unsigned) time(&t));
+    /*time_t t;
+    srand((unsigned) time(&t));*/
     /*Declare an integer n and assign it a value.*/
     int n = rand()%100;
     /*Allocate memory for n students using malloc.*/

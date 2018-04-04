@@ -21,8 +21,8 @@ void sort(int* number, int n){
 }
 
 int main(){
-    time_t t;
-    srand((unsigned) time(&t));
+    /*time_t t;
+    srand((unsigned) time(&t));*/
     /*Declare an integer n and assign it a value of 20.*/
     int n = 20;
     /*Allocate memory for an array of n integers using malloc.*/
