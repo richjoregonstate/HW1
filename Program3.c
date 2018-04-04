@@ -5,7 +5,7 @@
  */
 
 #include <stdio.h>
-#include<stdlib.h>
+#include <stdlib.h>
 
 void sort(int* number, int n){
      int tmp,i,j;
