@@ -8,7 +8,16 @@
 #include<stdlib.h>
 
 void sort(int* number, int n){
-     /*Sort the array of integeres of length n*/
+     int tmp,i,j;
+     for (i = 0; i < n-1; i++) {
+        for (j = 0; j < n-i-1; j++) {
+          if (number[j] > number[j+1]) {
+              tmp = number[j];
+              number[j] = number[j+1];
+              number[j+1] = tmp;
+          }
+        }
+     }
 }
 
 int main(){
@@ -36,5 +45,6 @@ int main(){
     for (int i = 0; i < n; i++) {
         printf("%d\n", arr[i]);
     }
+    free(arr);
     return 0;
 }
