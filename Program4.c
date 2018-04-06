@@ -23,8 +23,9 @@ void generate(struct student* students, int n){
      /*Generate random initials and scores for ten students.
 	The two initial letters must be capital and must be between A and Z.
 	The scores must be between 0 and 100*/
-  for (int i = 0; i < n; i++) {
-    students[i].initials[0] = rand()%(90+1 - 65)+65;//ASCII code for a capatal letter
+	int i;
+  for (i = 0; i < n; i++) {
+    students[i].initials[0] = rand()%(90+1 - 65)+65;/*ASCII code for a capatal letter*/
     students[i].initials[1] = rand()%(90+1 - 65)+65;
     students[i].score = rand()%100;
   }
@@ -37,7 +38,8 @@ void output(struct student* students,int n){
               2. Initials  Score
               ...
               10. Initials Score*/
-		for (int i = 0; i < n; i++) {
+		int i;
+		for (i = 0; i < n; i++) {
 			printf("%d", i);
 			printf("%s", " ");
 			printf("%s", (char*) students[i].initials);
@@ -51,7 +53,7 @@ void sort(struct student* students, int n){
   int tmp,i,j;
   for (i = 0; i < n-1; i++) {
      for (j = 0; j < n-i-1; j++) {
-       if(students[j].initials[0] == students[j+1].initials[0]){// If the first initals are the same sort on the second
+       if(students[j].initials[0] == students[j+1].initials[0]){/* If the first initals are the same sort on the second*/
          if (students[j].initials[1] > students[j+1].initials[1]) {
              tmp = students[j].initials[1];
              students[j].initials[1] = students[j+1].initials[1];
@@ -68,8 +70,7 @@ void sort(struct student* students, int n){
 }
 
 int main(){
-    /*time_t t;
-    srand((unsigned) time(&t));*/
+    srand(193482);
     /*Declare an integer n and assign it a value.*/
     int n = rand()%100;
     /*Allocate memory for n students using malloc.*/

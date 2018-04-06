@@ -24,8 +24,9 @@ void generate(struct student* students){
      /*Generate random initials and scores for ten students.
 	The two initial letters must be capital and must be between A and Z.
 	The scores must be between 0 and 100*/
-  for (int i = 0; i < 10; i++) {
-    students[i].initials[0] = rand()%(90+1 - 65)+65;//ASCII code for a capatal letter
+	int i;
+  for (i = 0; i < 10; i++) {
+    students[i].initials[0] = rand()%(90+1 - 65)+65;/*ASCII code for a capatal letter*/
     students[i].initials[1] = rand()%(90+1 - 65)+65;
     students[i].score = rand()%100;
   }
@@ -38,7 +39,8 @@ void output(struct student* students){
               2. Initials  Score
               ...
               10. Initials Score*/
-		for (int i = 0; i < 10; i++) {
+		int i;
+		for (i = 0; i < 10; i++) {
 			printf("%d", i);
 			printf("%s", " ");
 			printf("%s", (char*) students[i].initials);
@@ -52,10 +54,11 @@ void summary(struct student* students){
 		 int max = students[0].score;
  		 int min = students[0].score;
  		 int avg = 0;
+		 int i;
 
 
 
-		 for (size_t i = 0; i < 10; i++) {
+		 for (i = 0; i < 10; i++) {
 			 avg += students[i].score;
 			 if (students[i].score > max) {
 				 	max = students[i].score;
@@ -86,9 +89,8 @@ void deallocate(struct student* stud){
 }
 
 int main(){
-    /*time_t t;
-    srand((unsigned) time(&t));*/
-    struct student* stud = NULL;
+		struct student* stud = NULL;
+    srand(193482);
     /*call allocate*/
     stud = allocate();
     /*call generate*/
