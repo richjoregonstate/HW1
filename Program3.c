@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 void sort(int* number, int n){
      int tmp,i,j;

@@ -5,8 +5,9 @@
  */
 
 #include <stdio.h>
-#include<stdlib.h>
-#include<math.h>
+#include <stdlib.h>
+#include <math.h>
+#include <time.h>
 
 struct student{
 	char initials[2];
