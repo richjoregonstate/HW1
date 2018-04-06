@@ -21,7 +21,8 @@ void sort(int* number, int n){
 }
 
 int main(){
-    srand(193482);
+    time_t seed = time(NULL);
+    srand(seed);
     /*Declare an integer n and assign it a value of 20.*/
     int n = 20;
     int i;

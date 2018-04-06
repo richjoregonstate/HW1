@@ -6,6 +6,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int foo(int* a, int* b, int c){
     printf("%u\n", *a);
@@ -24,7 +25,8 @@ int foo(int* a, int* b, int c){
 
 int main(){
     /* Declare three integers x,y and z and initialize them randomly to values in [0,10] */
-    srand(193482);
+    time_t seed = time(NULL);
+    srand(seed);
 
     int *x = malloc(sizeof(int));
     int *y = malloc(sizeof(int));

@@ -70,7 +70,8 @@ void sort(struct student* students, int n){
 }
 
 int main(){
-    srand(193482);
+		time_t seed = time(NULL);
+		srand(seed);
     /*Declare an integer n and assign it a value.*/
     int n = rand()%100;
     /*Allocate memory for n students using malloc.*/

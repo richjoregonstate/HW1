@@ -90,7 +90,8 @@ void deallocate(struct student* stud){
 
 int main(){
 		struct student* stud = NULL;
-    srand(193482);
+		time_t seed = time(NULL);
+		srand(seed);
     /*call allocate*/
     stud = allocate();
     /*call generate*/
