@@ -7,12 +7,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <assert.h>
 
 int foo(int* a, int* b, int c){
-    printf("%u\n", *a);
-    printf("%u\n", *b);
-    printf("%u\n", c);
-    printf("%s\n","------" );
     /* Increment a */
     (*a)++;
     /* Decrement  b */
@@ -55,5 +52,7 @@ int main(){
     /* Print the value returned by foo */
     printf("%d\n", *fooBar);
     /* Is the return value different than the value of z?  Why? */
+    printf("%s %d %d\n","Z and foo: ",*z,*fooBar);
+    /*Beacuse the value of z was passed not the pointer. As such post foo() z did not change despite c becoming foobar*/
     return 0;
 }

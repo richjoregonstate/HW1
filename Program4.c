@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <assert.h>
 
 struct student{
 	char initials[2];
@@ -50,34 +51,39 @@ void output(struct student* students,int n){
     printf("%s\n", "--------");
 }
 
-void sort(struct student* students, int n){
-  int tmp,i,j;
-  for (i = 0; i < n-1; i++) {
-     for (j = 0; j < n-i-1; j++) {
-       if(students[j].initials[0] == students[j+1].initials[0]){/* If the first initals are the same sort on the second*/
-         if (students[j].initials[1] > students[j+1].initials[1]) {
-             tmp = students[j].initials[1];
-             students[j].initials[1] = students[j+1].initials[1];
-             students[j+1].initials[1] = tmp;
-         }
-       }
-       else if (students[j].initials[0] > students[j+1].initials[0]) {
-           tmp = students[j].initials[0];
-           students[j].initials[0] = students[j+1].initials[0];
-           students[j+1].initials[0] = tmp;
-       }
-     }
-  }
+void swap(struct student* a, struct student* b) {
+	struct student t = *a;
+	*a = *b;
+	*b = t;
 }
+
+void sort(struct student* students, int n){
+	int i, j;
+	for (i = 0; i < n-1; i++){
+			for (j = 0; j < n-i-1; j++){
+				if (students[j].initials[0] == students[j+1].initials[0]) {
+					if (students[j].initials[1] > students[j+1].initials[1]){
+						swap(&students[j], &students[j+1]);
+					}
+				}
+				else if (students[j].initials[0] > students[j+1].initials[0]){
+					swap(&students[j], &students[j+1]);
+				}
+			}
+		}
+}
+
 
 int main(){
 		time_t seed = time(NULL);
 		srand(seed);
     /*Declare an integer n and assign it a value.*/
     int n = rand()%100;
+		assert(n > 0);
     /*Allocate memory for n students using malloc.*/
     struct student* stud;
     stud = allocate(n);
+		assert(stud != NULL);
     /*Generate random IDs and scores for the n students, using rand().*/
     generate(stud,n);
     /*Print the contents of the array of n students.*/

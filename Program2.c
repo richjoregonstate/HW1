@@ -8,6 +8,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include <time.h>
+#include <assert.h>
 
 struct student{
 	char initials[2];
@@ -80,13 +81,8 @@ void summary(struct student* students){
 
 void deallocate(struct student* stud){
      /*Deallocate memory from stud*/
-		 if (stud != NULL) {
-			 	free(stud);
-		 }
-		 if(stud == NULL){
-			 printf("%s\n", "Good to go");
-		 }
-
+		 assert(stud != NULL);
+		 free(stud);
 }
 
 int main(){

@@ -1,0 +1,23 @@
+The three levels of Abstration
+ADT - Abstract Data Type
+	-Defines main characteristics of the container.
+	-Specifies operations over the container
+	-Interface - in a particular libary of containers
+		-Defines how to use it
+		-Behavior constraints
+	-Implementation - in a particular libary
+		-Specifies how it works
+	-Basic ADT's
+		-Bag, ordered bag
+		-Stack, queue, Deque
+		-Priority Queue
+		-List
+		-Hash
+Bag ADT - Unordered collection of data elements
+	-Operations
+		-Initialize the bag
+		-Add/Remove
+		-Check for an element
+		-Check size of ba
+	-Behavior - Specific requirements on time of operations
+	

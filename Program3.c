@@ -7,6 +7,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <assert.h>
 
 void sort(int* number, int n){
      int tmp,i,j;
@@ -27,9 +28,7 @@ int main(){
     /*Declare an integer n and assign it a value of 20.*/
     int n = 20;
     int i;
-    if (n <= 0){
-      return 1;
-    }
+    assert(n > 0);
     /*Allocate memory for an array of n integers using malloc.*/
     int *arr;
     arr = (int*) malloc(n*sizeof(int));
